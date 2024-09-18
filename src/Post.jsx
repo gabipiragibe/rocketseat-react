@@ -5,7 +5,6 @@ export function Post(props) {
     <div>
       <strong>{props.author}</strong>
       <p>{props.content}</p>
-      <h1>Yhuuuu</h1>
     </div>
   );
 }
