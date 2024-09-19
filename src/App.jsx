@@ -15,6 +15,7 @@ export function App() {
         <main>
           <PostComponent author="Gabriela Piragibe" content="Primeiro post" />
           <PostComponent author="Gabriela Piragibe" content="Segundo post" />
+          <PostComponent author="Gabriela Piragibe" content="Terceiro post" />
         </main>
       </S.Wrapper>
     </div>
