@@ -67,3 +67,55 @@ export const LinkContent = styled.a`
     color: var(--purple-3000);
   }
 `;
+
+export const CommentForm = styled.form`
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-600);
+
+  strong {
+    line-height: 1.6;
+    color: var(--gray-100);
+  }
+
+  textarea {
+    width: 100%;
+    background: var(--gray-700);
+    border: 0;
+    resize: none;
+    height: 6rem;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    color: var(--gray-100);
+    line-height: 1.4;
+  }
+`;
+
+export const DisplayButton = styled.div`
+  /* visibility: hidden;
+  max-height: 0;
+
+  :focus-within {
+    visibility: visible;
+    max-height: none;
+  } */
+  //ajustar
+`;
+
+export const CommentButton = styled.button`
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 0;
+  background: var(--purple-500);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  :hover {
+    background: var(--purple-300);
+  }
+`;

@@ -33,6 +33,14 @@ export const PostComponent = () => {
           <S.LinkContent href=""> #rocketseat</S.LinkContent>
         </S.TextContent>
       </div>
+
+      <S.CommentForm>
+        <strong>Deixe seu feedback</strong>
+        <textarea placeholder="Escreva seu comentário" />
+        <S.DisplayButton>
+          <S.CommentButton type="submit">Publicar</S.CommentButton>
+        </S.DisplayButton>
+      </S.CommentForm>
     </S.Container>
   );
 };

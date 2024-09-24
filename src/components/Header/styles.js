@@ -8,5 +8,5 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.img`
-  height: 2rem;
+  height: 5rem;
 `;
