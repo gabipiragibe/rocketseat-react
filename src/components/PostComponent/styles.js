@@ -119,3 +119,7 @@ export const CommentButton = styled.button`
     background: var(--purple-300);
   }
 `;
+
+export const CommentList = styled.div`
+  margin-top: 2rem;
+`;

@@ -1,3 +1,4 @@
+import { Comments } from "../Comments";
 import * as S from "./styles";
 
 export const PostComponent = () => {
@@ -41,6 +42,11 @@ export const PostComponent = () => {
           <S.CommentButton type="submit">Publicar</S.CommentButton>
         </S.DisplayButton>
       </S.CommentForm>
+      <S.CommentList>
+        <Comments />
+        <Comments />
+        <Comments />
+      </S.CommentList>
     </S.Container>
   );
 };
