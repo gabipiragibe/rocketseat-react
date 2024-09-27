@@ -1,9 +1,14 @@
 import { ThumbsUp, Trash } from "phosphor-react";
 import * as S from "./styles";
+import { Avatar } from "../Avatar";
 export const Comments = () => {
   return (
     <S.Container>
-      <S.ProfileImage src="https://github.com/gabipiragibe.png" alt="" />
+      <Avatar
+        hasBorder={false}
+        src="https://github.com/gabipiragibe.png"
+        alt=""
+      />
       <S.CommentBox>
         <S.CommentContent>
           <S.Header>

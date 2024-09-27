@@ -24,15 +24,6 @@ export const Author = styled.div`
   gap: 1rem;
 `;
 
-export const ProfileImage = styled.img`
-  box-sizing: initial;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 8px;
-  border: 4px solid var(--gray-800);
-  outline: 2px solid var(--purple-500);
-`;
-
 export const AuthorInfo = styled.div`
   display: flex;
   flex-direction: column;

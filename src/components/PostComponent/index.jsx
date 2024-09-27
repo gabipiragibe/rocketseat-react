@@ -1,3 +1,4 @@
+import { Avatar } from "../Avatar";
 import { Comments } from "../Comments";
 import * as S from "./styles";
 
@@ -6,7 +7,7 @@ export const PostComponent = () => {
     <S.Container>
       <S.Header>
         <S.Author>
-          <S.ProfileImage src="https://github.com/gabipiragibe.png" />
+          <Avatar src="https://github.com/gabipiragibe.png" />
           <S.AuthorInfo>
             <strong>Gabriela Piragibe</strong>
             <span>Web Developer</span>
