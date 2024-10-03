@@ -2,7 +2,9 @@ import { Avatar } from "../Avatar";
 import { Comments } from "../Comments";
 import * as S from "./styles";
 
-export const PostComponent = () => {
+export const PostComponent = (props) => {
+  console.log(props);
+
   return (
     <S.Container>
       <S.Header>
