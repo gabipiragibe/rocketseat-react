@@ -21,14 +21,15 @@ const posts = [
         content:
           " Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀 ",
       },
-      { type: "paragraph", content: "jane.design/doctorcare" },
+      { type: "link", content: "jane.design/doctorcare" },
     ],
     publishedAt: new Date("2024-10-03 17:35:00"),
   },
   {
     id: 2,
     author: {
-      avatarUrl: "https://github.com/gabipiragibe.png",
+      avatarUrl:
+        "https://media.licdn.com/dms/image/v2/D4D35AQEjpfeuXEH55w/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1726665683867?e=1729036800&v=beta&t=XvMZql5Vm3-7cFKRVm6YVYHD6Qa2zbRfCAOdih1BMiA",
       name: "Aline Soares",
       role: "Recruiter",
     },
@@ -39,7 +40,7 @@ const posts = [
         content:
           " Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀 ",
       },
-      { type: "paragraph", content: "jane.design/doctorcare" },
+      { type: "link", content: "jane.design/doctorcare" },
     ],
     publishedAt: new Date("2024-10-03 17:35:00"),
   },

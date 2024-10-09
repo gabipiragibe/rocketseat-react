@@ -1,41 +1,52 @@
+import ptBR from "date-fns/locale/pt-BR";
 import { Avatar } from "../Avatar";
 import { Comments } from "../Comments";
 import * as S from "./styles";
+import { format, formatDistanceToNow } from "date-fns";
 
-export const PostComponent = (props) => {
-  console.log(props);
+export const PostComponent = ({ author, publishedAt, content }) => {
+  const publishedDataFormatted = format(
+    publishedAt,
+    "d 'de' LLLL 'às' HH:mm'h'",
+    {
+      locale: ptBR,
+    }
+  );
+
+  const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  });
 
   return (
     <S.Container>
       <S.Header>
         <S.Author>
-          <Avatar src="https://github.com/gabipiragibe.png" />
+          <Avatar src={author.avatarUrl} />
           <S.AuthorInfo>
-            <strong>Gabriela Piragibe</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </S.AuthorInfo>
         </S.Author>
         <S.PostTime
-          title="19 de setembro às 19:46h"
-          dateTime="2024-09-19 19:46:00"
+          title={publishedDataFormatted}
+          dateTime={publishedAt.toISOString()}
         >
-          Publicado há 1h
+          {publishedDateRelativeToNow}
         </S.PostTime>
       </S.Header>
       <div content>
-        <S.TextContent>Fala galeraa 👋</S.TextContent>
-        <S.TextContent>
-          Acabei de subir mais um projeto no meu portifa. É um projeto que fiz
-          no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀
-        </S.TextContent>
-        <S.TextContent>
-          <S.LinkContent href="">jane.design/doctorcare</S.LinkContent>
-        </S.TextContent>
-        <S.TextContent>
-          <S.LinkContent href="">#novoprojeto</S.LinkContent>{" "}
-          <S.LinkContent href="">#nlw</S.LinkContent>{" "}
-          <S.LinkContent href=""> #rocketseat</S.LinkContent>
-        </S.TextContent>
+        {content.map((item, index) => {
+          if (item.type === "paragraph") {
+            return <S.TextContent key={index}>{item.content}</S.TextContent>;
+          } else if (item.type === "link") {
+            return (
+              <S.LinkContent key={index} href="#">
+                {item.content}
+              </S.LinkContent>
+            );
+          }
+        })}
       </div>
 
       <S.CommentForm>
