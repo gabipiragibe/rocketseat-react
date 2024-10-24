@@ -1,7 +1,8 @@
 import { ThumbsUp, Trash } from "phosphor-react";
 import * as S from "./styles";
 import { Avatar } from "../Avatar";
-export const Comments = () => {
+
+export const Comment = () => {
   return (
     <S.Container>
       <Avatar
