@@ -29,7 +29,7 @@ const posts = [
     id: 2,
     author: {
       avatarUrl:
-        "https://media.licdn.com/dms/image/v2/D4D35AQEjpfeuXEH55w/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1726665683867?e=1729036800&v=beta&t=XvMZql5Vm3-7cFKRVm6YVYHD6Qa2zbRfCAOdih1BMiA",
+        "https://media.licdn.com/dms/image/v2/D4D35AQEjpfeuXEH55w/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1726665683867?e=1730754000&v=beta&t=aIMQGKEBsWnZR6QEuaCvCwexY9ymlriJ8FsjKGczqEw",
       name: "Aline Soares",
       role: "Recruiter",
     },

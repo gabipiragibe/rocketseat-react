@@ -2,7 +2,7 @@ import { ThumbsUp, Trash } from "phosphor-react";
 import * as S from "./styles";
 import { Avatar } from "../Avatar";
 
-export const Comment = () => {
+export const Comment = ({ content }) => {
   return (
     <S.Container>
       <Avatar
@@ -26,7 +26,7 @@ export const Comment = () => {
               <Trash size={20} />
             </S.DeleteButton>
           </S.Header>
-          <p>Muito bom, parabéns!</p>
+          <p>{content}</p>
         </S.CommentContent>
         <S.Footer>
           <S.FooterButton>

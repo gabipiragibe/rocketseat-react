@@ -7,9 +7,10 @@ import { useState } from "react";
 
 export const PostComponent = ({ author, publishedAt, content }) => {
   const [comments, setComments] = useState([
-    1,
-    2,
+    "Post legal!!"
   ])
+  const [newCommentText, setnewCommentText] = useState('');
+
   const publishedDataFormatted = format(
     publishedAt,
     "d 'de' LLLL 'às' HH:mm'h'",
@@ -24,9 +25,15 @@ export const PostComponent = ({ author, publishedAt, content }) => {
   });
 
   const handleCreateNewComment = () => {
-    event.preventDefault()
+    event.preventDefault() 
 
-    setComments([...comments, comments.length + 1])
+    setComments([...comments, newCommentText]);
+    setnewCommentText('');
+
+  }
+
+  const handleNewCommentChange = () => {
+    setnewCommentText(event.target.value);
   }
 
   return (
@@ -46,6 +53,7 @@ export const PostComponent = ({ author, publishedAt, content }) => {
           {publishedDateRelativeToNow}
         </S.PostTime>
       </S.Header>
+
       <div content>
         {content.map((item, index) => {
           if (item.type === "paragraph") {
@@ -62,7 +70,9 @@ export const PostComponent = ({ author, publishedAt, content }) => {
 
       <S.CommentForm onSubmit={handleCreateNewComment}>
         <strong>Deixe seu feedback</strong>
-        <textarea placeholder="Escreva seu comentário" />
+
+        <textarea name="comment" placeholder="Escreva seu comentário" value={newCommentText} onChange={handleNewCommentChange}/>
+
         <S.DisplayButton>
           <S.CommentButton type="submit">Publicar</S.CommentButton>
         </S.DisplayButton>
@@ -70,7 +80,7 @@ export const PostComponent = ({ author, publishedAt, content }) => {
       <S.CommentList>
         {comments.map((comment) => (
           //pra cada comentário retorna um componente de comentário
-          <Comment key={comment.id} content={comment.content} />
+          <Comment key={comment} content={comment} />
         ))}
       </S.CommentList>
     </S.Container>
