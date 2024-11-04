@@ -36,6 +36,13 @@ export const PostComponent = ({ author, publishedAt, content }) => {
     setnewCommentText(event.target.value);
   }
 
+  const deleteComment = (commentToDelete) => {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+      return comment !== commentToDelete;
+    })
+    setComments(commentsWithoutDeletedOne);
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -80,7 +87,11 @@ export const PostComponent = ({ author, publishedAt, content }) => {
       <S.CommentList>
         {comments.map((comment) => (
           //pra cada comentário retorna um componente de comentário
-          <Comment key={comment} content={comment} />
+          <Comment 
+            key={comment} 
+            content={comment} 
+            onDeleteComment={deleteComment}
+          />
         ))}
       </S.CommentList>
     </S.Container>
