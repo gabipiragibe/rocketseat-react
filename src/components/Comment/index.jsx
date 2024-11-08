@@ -11,8 +11,12 @@ export const Comment = ({ content, onDeleteComment }) => {
   };
 
   const handleLikeComment = () => {
-    setLikeCount(likeCount + 1);
+    setLikeCount((state) => {
+      return state + 1;
+    });
   }
+  //state é um argumento, é o valor mais recente. 
+  //ele vai devolver qual o valor mais atual, como se formasse uma fila
 
   return (
     <S.Container>
