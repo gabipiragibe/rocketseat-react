@@ -33,7 +33,12 @@ export const PostComponent = ({ author, publishedAt, content }) => {
   }
 
   const handleNewCommentChange = () => {
+    event.target.setCustomValidity('');
     setnewCommentText(event.target.value);
+  }
+
+  const handleNewCommentInvalid = () => {
+    event.target.setCustomValidity('Esse campo é obrigatório!');
   }
 
   const deleteComment = (commentToDelete) => {
@@ -42,6 +47,8 @@ export const PostComponent = ({ author, publishedAt, content }) => {
     })
     setComments(commentsWithoutDeletedOne);
   }
+
+  const isNewCommentEmpty = newCommentText.length === 0;
 
   return (
     <S.Container>
@@ -78,10 +85,17 @@ export const PostComponent = ({ author, publishedAt, content }) => {
       <S.CommentForm onSubmit={handleCreateNewComment}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea name="comment" placeholder="Escreva seu comentário" value={newCommentText} onChange={handleNewCommentChange}/>
+        <textarea 
+        name="comment" 
+        placeholder="Escreva seu comentário" 
+        value={newCommentText} 
+        onChange={handleNewCommentChange}
+        onInvalid={handleNewCommentInvalid}
+        required
+        />
 
         <S.DisplayButton>
-          <S.CommentButton type="submit">Publicar</S.CommentButton>
+          <S.CommentButton type="submit" disabled={isNewCommentEmpty}>Publicar</S.CommentButton>
         </S.DisplayButton>
       </S.CommentForm>
       <S.CommentList>

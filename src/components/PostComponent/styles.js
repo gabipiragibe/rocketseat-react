@@ -103,10 +103,11 @@ export const CommentButton = styled.button`
   background: var(--purple-500);
   color: var(--white);
   font-weight: bold;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : " pointer")};
   transition: background-color 0.2s;
+  opacity: ${({ disabled }) => (disabled ? "0.7" : "1")};
 
-  :hover {
+  :not(:disabled):hover {
     background: var(--purple-300);
   }
 `;
